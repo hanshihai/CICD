@@ -6,8 +6,8 @@ This is for mongo commands.
 ### backup and restore
 
 ```
-mongodump -h localhost -d database --gzip --archive=backup.gz               :   dump localhost db database into archive file backup.gz
-mongorestore -h localhost -p 27017 --gzip --archive=backup.gz --db dbname   :   restore the backup db into db3
+mongodump -h localhost -d database -u username -p pwd               :   dump localhost db database into archive folder
+mongorestore -h localhost -d database --dir=arch-folder --drop      :   restore the backup db into database
 ```
 
 ### user 
