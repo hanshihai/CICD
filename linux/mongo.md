@@ -46,17 +46,20 @@ mongod --auth
 $in，$or，$nin
 
 select * from cn where f1 in (a, b, c):
-db.<cn>.find({"f1" : {$in: [a, b, c]}})
+db.cn.find({"f1" : {$in: [a, b, c]}})
 
 select * from cn where f1 not in (a, b, c):
-db.<cn>.find({"f1" : {$nin: [a, b, c]}})
+db.cn.find({"f1" : {$nin: [a, b, c]}})
 
 select * from cn where f1 = v1 or f2 = v2:
-dc.<cn>.find({$or : [{f1 : v1},{f2 : v2}]})
+dc.cn.find({$or : [{f1 : v1},{f2 : v2}]})
 
 select count(*) from cn where f1 = v1:
-db.<cn>.count({f1 : v1})
+db.cn.count({f1 : v1})
 
 select distinct from cn where f1 = v1:
-db.<cn>.distinct({f1 : v1})
+db.cn.distinct({f1 : v1})
+  
+select distinct key from collection:
+db.collection.distinct("key")
 
