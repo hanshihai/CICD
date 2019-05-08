@@ -179,3 +179,25 @@ vi /etc/exports
 exportfs -v  : list nfs export folder
 showmount -e server_ip : list nfs share folders
 ```
+
+###centos7 httpd
+```
+install: yum install httpd.x86_64
+install: yum install mod_ssl.x86_64
+serverroot: /etc/httpd
+sub conf: conf.modules.d/*.conf and conf.d/*.conf
+doc root: /var/www/html
+logs: logs/
+
+generate certification:
+sudo openssl req -x509 -nodes -days 1095 -newkey rsa:2048 -out ssl/server.crt -keyout ssl/server.key
+
+/etc/httpd/conf.d/ssl/server.crt
+/etc/httpd/conf.d/ssl/server.key
+
+libopentoken.so
+mod_pf.so
+
+apachectl start
+apacheectl stop
+```
