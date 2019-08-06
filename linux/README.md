@@ -91,6 +91,12 @@ cut -d: -f1 /etc/group         : list all groups
 cut -d: -f1 /etc/passwd        : list all users
 
 su username                 : switch to another user login
+
+job controls:
+ctrl+z : pause current running job, and schedule it to backgroud
+jobs : show current jobs
+bg %i : background to run the job %1
+fg %1 : run it front
 ```
 
 ###curl
